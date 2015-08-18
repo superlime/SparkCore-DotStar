@@ -34,6 +34,20 @@
 
 #include "dotstar.h"
 
+#if defined(PLATFORM_ID)  //Only defined if a Particle device
+  #include "application.h"
+  STM32_Pin_Info* PIN_MAP = HAL_Pin_Map(); // Pointer required for highest access speed
+#if (PLATFORM_ID == 0)  // Core
+  #define pinLO(_pin) (PIN_MAP[_pin].gpio_peripheral->BRR = PIN_MAP[_pin].gpio_pin)
+  #define pinHI(_pin) (PIN_MAP[_pin].gpio_peripheral->BSRR = PIN_MAP[_pin].gpio_pin)
+#elif (PLATFORM_ID == 6) // Photon
+  #define pinLO(_pin) (PIN_MAP[_pin].gpio_peripheral->BSRRH = PIN_MAP[_pin].gpio_pin)
+  #define pinHI(_pin) (PIN_MAP[_pin].gpio_peripheral->BSRRL = PIN_MAP[_pin].gpio_pin)
+#else
+  #error "*** PLATFORM_ID not supported by this library. PLATFORM should be Core or Photon ***"
+#endif
+#endif
+
 // fast pin access
 #define pinLO(_pin) (PIN_MAP[_pin].gpio_peripheral->BRR = PIN_MAP[_pin].gpio_pin)
 #define pinHI(_pin) (PIN_MAP[_pin].gpio_peripheral->BSRR = PIN_MAP[_pin].gpio_pin)

@@ -7,12 +7,12 @@
   -- original header follows ---------------------------------------------
   ------------------------------------------------------------------------
 
-// Simple strand test for Adafruit Dot Star RGB LED strip.
-// This is a basic diagnostic tool, NOT a graphics demo...helps confirm
-// correct wiring and tests each pixel's ability to display red, green
-// and blue and to forward data down the line.  By limiting the number
-// and color of LEDs, it's reasonably safe to power a couple meters off
-// the Spark Core's VIN pin.  DON'T try that with other code!
+ Simple strand test for Adafruit Dot Star RGB LED strip.
+ This is a basic diagnostic tool, NOT a graphics demo...helps confirm
+ correct wiring and tests each pixel's ability to display red, green
+ and blue and to forward data down the line.  By limiting the number
+ and color of LEDs, it's reasonably safe to power a couple meters off
+ the Spark Core's VIN pin.  DON'T try that with other code!
 
 /* ======================= includes ================================= */
 
