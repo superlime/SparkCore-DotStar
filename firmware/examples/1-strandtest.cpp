@@ -14,7 +14,7 @@
  and color of LEDs, it's reasonably safe to power a couple meters off
  the Spark Core's VIN pin.  DON'T try that with other code!
 
-/* ======================= includes ================================= */
+ ======================= includes ================================= */
 
 #include "application.h"
 
